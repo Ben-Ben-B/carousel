@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 800px;
+            height: 600px;
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+        .carousel{
+            width: 400px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .box .carousel .c{
+            list-style: none;
+            width: 400%;
+        }
+        .box .carousel ul li{
+
+            float: left;
+        }
+        .box .carousel ul li img{
+            width: 400px;
+            height: 200px;
+            display: block;
+        }
+        .clearfix::after{
+            content: "";
+            height: 0;
+            visibility: hidden;
+            clear: both;
+            display: block;
+            line-height: 0;
+        }
+        .box .carousel .circle{
+            list-style: none;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+         overflow: hidden;
+            transform:translateX(-50%);
+        }
+        .circle li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            margin: 10px;
+        }
+        .left,.right{
+            font-size: 40px;
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            top: 50%;
+            background-color: #fff;
+            transform: translateY(-50%);
+        }
+        .left{
+            left: -40px;
+        }
+        .right{
+            right: -40px;
+        }
+        .carousel:hover .left{
+            left: 0px;
+        }   .carousel:hover .right{
+
+            right: 0px;
+        }
+        .active{
+            background-color: red !important;
+        }
+    </style>
+</head>
+<body>
+ <div class="box">
+     <div class="carousel clearfix"  id="carousel">
+         <ul class="c">
+             <li><a href="javascript:;"><img src="images/01.jpg" alt=""/></a></li>
+             <li><a href="javascript:;"><img src="images/02.jpg" alt=""/></a></li>
+             <li><a href="javascript:;"><img src="images/03.jpg" alt=""/></a></li>
+             <li><a href="javascript:;"><img src="images/04.jpg" alt=""/></a></li>
+         </ul>
+         <ul class="circle" id="circle">
+             <li class="active"></li>
+             <li></li>
+             <li></li>
+             <li></li>
+         </ul>
+         <div class="left" id="leftBtn">
+             <a href="javascript:;"><span>&lt;</span></a>
+         </div><div class="right" id="rightBtn">
+             <a href="javascript:;"><span>&gt;</span></a>
+         </div>
+     </div>
+ </div>
+</body>
+<script src="js/carousel.js"></script>
+<script>
+   var caro=new Carousel({
+       "carousel":"carousel",
+       "autoPlay":true
+   })
+</script>
+</html>
